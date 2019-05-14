@@ -5,16 +5,17 @@
 class Task
 {
 public:
-    int n, m, N, s;
-    float h, k, e, z;
-    float **Xr, **X, **B;
+    int n, m;
+    double h, k, z;
+    double **Xr, **X, **B;
+    double *N_and_e;
 
-    Task(int n, int m, int N, float e, int num);
-    float u(float x, float y)
+    Task(int n, int m, int N, double e, int num);
+    double u(double x, double y)
     {
         return exp(x*x - y*y);
     }
-    float f(float x, float y)
+    double f(double x, double y)
     {
         return -4 * exp(x*x - y*y) * (x*x + y*y);
     }
@@ -22,11 +23,11 @@ public:
     //float mu2(float y);
     //float mu3(float x);
     //float mu4(float x);
-    float x(int i)
+    double x(int i)
     {
         return 1 + i*h;
     }
-    float y(int j)
+    double y(int j)
     {
         return 1 + j*k;
     }

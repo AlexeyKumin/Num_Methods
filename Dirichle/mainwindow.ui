@@ -211,6 +211,32 @@
         <string/>
        </property>
       </widget>
+      <widget class="QLabel" name="label_66">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>e =</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_67">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>220</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QGroupBox" name="groupBox_2">
       <property name="geometry">
@@ -247,7 +273,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_2">
@@ -273,7 +299,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_3">
@@ -312,7 +338,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>1000</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_12">
@@ -351,7 +377,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>0.000000001</string>
+        <string>1e-8</string>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox">
@@ -478,7 +504,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_24">
@@ -504,7 +530,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_25">
@@ -543,7 +569,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>1000</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_27">
@@ -582,7 +608,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>0.000000001</string>
+        <string>1e-8</string>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_2">
@@ -614,7 +640,7 @@
      <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
        <rect>
-        <x>-10</x>
+        <x>0</x>
         <y>0</y>
         <width>501</width>
         <height>661</height>
@@ -805,6 +831,58 @@
         <string/>
        </property>
       </widget>
+      <widget class="QLabel" name="label_68">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>220</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>e =</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_69">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>220</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_70">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>220</y>
+         <width>41</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>e2 =</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_71">
+       <property name="geometry">
+        <rect>
+         <x>280</x>
+         <y>220</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
      <widget class="QTabWidget" name="tabWidget_3">
       <property name="geometry">
@@ -962,7 +1040,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_17">
@@ -988,7 +1066,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>10</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_20">
@@ -1027,7 +1105,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>100</string>
+        <string>1000</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_29">
@@ -1066,7 +1144,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>0.000000001</string>
+        <string>1e-8</string>
        </property>
       </widget>
       <widget class="QComboBox" name="comboBox_3">
@@ -1249,7 +1327,7 @@
        <property name="geometry">
         <rect>
          <x>50</x>
-         <y>230</y>
+         <y>220</y>
          <width>191</width>
          <height>21</height>
         </rect>
@@ -1282,6 +1360,32 @@
        </property>
        <property name="text">
         <string>e = 1, 5 f = 1,5 - вырензан правый верхний кусок</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_62">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>260</y>
+         <width>31</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>e =</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_63">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>260</y>
+         <width>191</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
        </property>
       </widget>
      </widget>

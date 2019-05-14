@@ -5,33 +5,34 @@
 class Task1
 {
 public:
-    int n, m, N, s;
-    float h, k, e;
-    float **X, **B;
+    int n, m;
+    double h, k;
+    double **X, **B;
+    double *N_and_e;
 
-    Task1(int n, int m, int N, float e, int num);
+    Task1(int n, int m, int N, double e, int num);
 
-    float f(float x, float y)
+    double f(double x, double y)
     {
        return atan(x / y);
     }
-    float mu1(float y){
+    double mu1(double y){
         return 0 * y;
     }
-    float mu2(float y){
+    double mu2(double y){
         return 0 * y;
     }
-    float mu3(float x){
+    double mu3(double x){
         return pow(sin(M_PI * x), 2);
     }
-    float mu4(float x){
+    double mu4(double x){
         return cosh((x - 1) * (x - 2)) - 1;
     }
-    float x(int i)
+    double x(int i)
     {
         return 1 + i*h;
     }
-    float y(int j)
+    double y(int j)
     {
         return 1 + j*k;
     }

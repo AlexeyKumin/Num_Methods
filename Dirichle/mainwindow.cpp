@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void AddTable(QTableWidget *Tab, float **V, int n, int m)
+void AddTable(QTableWidget *Tab, double **V, int n, int m)
 {
     Tab->clear();
     Tab->setColumnCount(m + 2);
@@ -36,17 +36,17 @@ void AddTable(QTableWidget *Tab, float **V, int n, int m)
     }
 }
 
-void AddTable2(QTableWidget *Tab, float **V, int n, int m, int na, int ma)
+void AddTable2(QTableWidget *Tab, double **V, int n1, int m1, int n2, int m2)
 {
     Tab->clear();
-    Tab->setColumnCount(m + 2);
-    Tab->setRowCount(n + 2);
+    Tab->setColumnCount(m1 + m2 + 2);
+    Tab->setRowCount(n1 + n2 + 2);
     QTableWidgetItem *tbl;
-    for (int i = 1; i <= na + 1; i++)
+    for (int i = 1; i <= n1 + 1; i++)
     {
         tbl = new QTableWidgetItem("x(" + QString::number(i - 1) + ")");
         Tab->setItem(i,0,tbl);
-        for (int j = 1; j <= m + 1; j++)
+        for (int j = 1; j <= m1 + m2 + 1; j++)
         {
             tbl = new QTableWidgetItem("y(" + QString::number(j - 1) + ")");
             Tab->setItem(0,j,tbl);
@@ -54,11 +54,11 @@ void AddTable2(QTableWidget *Tab, float **V, int n, int m, int na, int ma)
             Tab->setItem(i,j,tbl);
         }
     }
-    for (int i = na + 2; i <= n + 1; i++)
+    for (int i = n1 + 2; i <= n1 + m2 + 1; i++)
     {
         tbl = new QTableWidgetItem("x(" + QString::number(i - 1) + ")");
         Tab->setItem(i,0,tbl);
-        for (int j = 1; j <= ma + 1; j++)
+        for (int j = 1; j <= m1 + 1; j++)
         {
             tbl = new QTableWidgetItem(QString::number(V[i - 1][j - 1]));
             Tab->setItem(i,j,tbl);
@@ -85,7 +85,8 @@ void MainWindow::on_pushButton_clicked()
         AddTable(ui->tableWidget_3, T.Xr, n, m);
     }
     ui->label_15->setText(QString::number(T.z));
-    ui->label_23->setText(QString::number(T.s));
+    ui->label_23->setText(QString::number(T.N_and_e[0]));
+    ui->label_67->setText(QString::number(T.N_and_e[1]));
 }
 
 void MainWindow::on_pushButton_2_clicked()
@@ -114,9 +115,11 @@ void MainWindow::on_pushButton_2_clicked()
                 z = abs(T.X[i][j] - T2.X[2 * i][2 * j]);
 
     ui->label_38->setText(QString::number(z));
-    ui->label_46->setText(QString::number(T.s));
+    ui->label_46->setText(QString::number(T.N_and_e[0]));
+    ui->label_69->setText(QString::number(T.N_and_e[1]));
 
-    ui->label_48->setText(QString::number(T2.s));
+    ui->label_48->setText(QString::number(T2.N_and_e[0]));
+    ui->label_71->setText(QString::number(T2.N_and_e[1]));
 }
 
 void MainWindow::on_pushButton_3_clicked()
@@ -130,16 +133,17 @@ void MainWindow::on_pushButton_3_clicked()
 
     if (!ui->checkBox_3->checkState())
     {
-        AddTable2(ui->tableWidget_7, T.Xr, n, m, T.na, T.ma);
-        AddTable2(ui->tableWidget_8, T.X, n, m, T.na, T.ma);
-        for (int i = 0; i < T.na + 1; i++)
-            for (int j = 0; j < m + 1; j++)
+        AddTable2(ui->tableWidget_7, T.Xr, T.n1, T.m1, T.n2, T.m2);
+        AddTable2(ui->tableWidget_8, T.X, T.n1, T.m1, T.n2, T.m2);
+        for (int i = 0; i < T.n1 + 1; i++)
+            for (int j = 0; j < T.m1 + T.m2 + 1; j++)
                 T.Xr[i][j] = abs(T.Xr[i][j] - T.X[i][j]);
-        for (int i = T.na + 1; i < n + 1; i++)
-            for (int j = 0; j < T.ma + 1; j++)
+        for (int i = T.n1 + 1; i < T.n1 + T.n2 + 1; i++)
+            for (int j = 0; j < T.m1 + 1; j++)
                 T.Xr[i][j] = abs(T.Xr[i][j] - T.X[i][j]);
-        AddTable2(ui->tableWidget_9, T.Xr, n, m, T.na, T.ma);
+        AddTable2(ui->tableWidget_9, T.Xr, T.n1, T.m1, T.n2, T.m2);
     }
     ui->label_64->setText(QString::number(T.z));
-    ui->label_61->setText(QString::number(T.s));
+    ui->label_61->setText(QString::number(T.N_and_e[0]));
+    ui->label_63->setText(QString::number(T.N_and_e[1]));
 }

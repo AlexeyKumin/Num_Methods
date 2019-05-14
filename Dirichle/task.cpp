@@ -1,21 +1,25 @@
 #include "task.h"
 
-Task::Task(int n1, int m1, int N, float e, int num = 1)
+Task::Task(int n1, int m1, int N, double e, int num = 1)
 {
     n = n1;
     m = m1;
-    h = (2 - 1) / (float)n;
-    k = (2 - 1) / (float)m;
+    h = (2 - 1) / (double)n;
+    k = (2 - 1) / (double)m;
 
-    Xr = new float*[n + 1];
-    X = new float*[n + 1];
-    B = new float*[n + 1];
+    N_and_e = new double[2];
+    N_and_e[0] = N;
+    N_and_e[1] = e;
+
+    Xr = new double*[n + 1];
+    X = new double*[n + 1];
+    B = new double*[n + 1];
 
     for (int i = 0; i < n + 1;i++)
     {
-        Xr[i] = new float[m + 1]();
-        X[i] = new float[m + 1]();
-        B[i] = new float[m + 1]();
+        Xr[i] = new double[m + 1]();
+        X[i] = new double[m + 1]();
+        B[i] = new double[m + 1]();
     }
 
     for (int i = 0; i < n + 1; i++)
@@ -40,13 +44,13 @@ Task::Task(int n1, int m1, int N, float e, int num = 1)
     Method M;
     switch (num) {
     case 0:
-        s = M.Jakobi(X, B, e, N, n, m, h, k);
+        N_and_e = M.Jakobi(X, B, N_and_e, n, m, h, k);
         break;
     case 1:
-        s = M.Zeidel(X, B, e, N, n, m, h, k);
+        N_and_e = M.Zeidel(X, B, N_and_e, n, m, h, k);
         break;
     case 2:
-        s = M.Conjugate_gradient(X, B, e, N, n, m, h, k);
+        N_and_e = M.Conjugate_gradient(X, B, N_and_e, n, m, h, k);
         break;
     }
 
