@@ -54,7 +54,7 @@ void AddTable2(QTableWidget *Tab, double **V, int n1, int m1, int n2, int m2)
             Tab->setItem(i,j,tbl);
         }
     }
-    for (int i = n1 + 2; i <= n1 + m2 + 1; i++)
+    for (int i = n1 + 2; i <= n1 + n2 + 1; i++)
     {
         tbl = new QTableWidgetItem("x(" + QString::number(i - 1) + ")");
         Tab->setItem(i,0,tbl);
@@ -79,6 +79,7 @@ void MainWindow::on_pushButton_clicked()
     {
         AddTable(ui->tableWidget, T.Xr, n, m);
         AddTable(ui->tableWidget_2, T.X, n, m);
+        AddTable(ui->tableWidget_11,T.B,n,m);
         for (int i = 0; i < n + 1; i++)
             for (int j = 0; j < m + 1; j++)
                 T.Xr[i][j] = abs(T.Xr[i][j] - T.X[i][j]);
@@ -135,6 +136,7 @@ void MainWindow::on_pushButton_3_clicked()
     {
         AddTable2(ui->tableWidget_7, T.Xr, T.n1, T.m1, T.n2, T.m2);
         AddTable2(ui->tableWidget_8, T.X, T.n1, T.m1, T.n2, T.m2);
+        AddTable2(ui->tableWidget_10, T.B, T.n1, T.m1, T.n2, T.m2);
         for (int i = 0; i < T.n1 + 1; i++)
             for (int j = 0; j < T.m1 + T.m2 + 1; j++)
                 T.Xr[i][j] = abs(T.Xr[i][j] - T.X[i][j]);

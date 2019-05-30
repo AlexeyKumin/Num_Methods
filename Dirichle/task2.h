@@ -7,12 +7,17 @@
 class Task2
 {
 public:
-    int n1, m1, n2, m2;
-    double h1, k1, h2, k2, z;
+    int n, m, na, ma, n1, m1, n2, m2;
+    double h, k, z,  a, b, h1, h2, k1, k2;
     double **Xr, **X, **B;
+
+//    int n1, m1, n2, m2;
+//    double h1, k1, h2, k2, z;
+//    double **Xr, **X, **B;
     double *N_and_e;
 
-    Task2(int n, int m, int N, double e, int num);
+    Task2(int n1, int m1, int N, double e, int num);
+
     double u(double x, double y)
     {
         return exp(x*x - y*y);

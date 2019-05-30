@@ -61,16 +61,16 @@ Task::Task(int n1, int m1, int N, double e, int num = 1)
                 z = abs(X[i][j] - Xr[i][j]);
 
     //Доооброботка
-    for (int i = 0; i < n + 1; i++)
-    {
-        X[i][0] = u(x(i), y(0));
-        X[i][m] = u(x(i), y(m));
-    }
-    for (int j = 0; j < m + 1; j++)
-    {
-        X[0][j] = u(x(0), y(j));
-        X[n][j] = u(x(n), y(j));
-    }
+//    for (int i = 0; i < n + 1; i++)
+//    {
+//        X[i][0] = u(x(i), y(0));
+//        X[i][m] = u(x(i), y(m));
+//    }
+//    for (int j = 0; j < m + 1; j++)
+//    {
+//        X[0][j] = u(x(0), y(j));
+//        X[n][j] = u(x(n), y(j));
+//    }
 }
 
 Task::~Task()
@@ -84,4 +84,5 @@ Task::~Task()
     delete[] Xr;
     delete[] X;
     delete[] B;
+    delete[] N_and_e;
 }

@@ -68,4 +68,5 @@ Task1::~Task1()
     }
     delete[] X;
     delete[] B;
+    delete[] N_and_e;
 }
